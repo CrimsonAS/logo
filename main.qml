@@ -17,7 +17,7 @@ Canvas
         ctx.translate(10, 10)
 
         // try {
-            Logo.drawLogo(ctx, 200, 200)
+        Logo.drawLogo(ctx, 200, 200)
         // } catch (e) {
         //     print("Caught Exception,", e);
         // }

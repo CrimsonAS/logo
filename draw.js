@@ -235,6 +235,8 @@ function drawLogo(ctx, w, h)
     var fillColor = "black"
     var triangleColor = "crimson"
 
+    ctx.save();
+
     ctx.fillStyle = fillColor
     ctx.fillRect(baseSize * ELLIPSE_PADDING, baseSize * ELLIPSE_PADDING, w - baseSize * ELLIPSE_PADDING * 2, h - baseSize * ELLIPSE_PADDING * 2)
     // ctx.beginPath()
@@ -249,6 +251,7 @@ function drawLogo(ctx, w, h)
     var tris = createTrianglesFromStroke(strokePoints)
 
     ctx.globalCompositeMode = "lighter"
+    ctx.translate(0.05 * w, 0)
 
     for (var i=0; i<tris.size(); ++i) {
         ctx.fillStyle = triangleColor
@@ -260,5 +263,5 @@ function drawLogo(ctx, w, h)
     ctx.lineWidth = TRIANGLE_OUTLINE_WIDTH * baseSize
     drawPolyline(ctx, strokePoints)
 
-
+    ctx.restore()
 }
